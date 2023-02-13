@@ -15,11 +15,11 @@ export default function Text(props) {
     };
     const right = (e) => {
         props.right(props.position);
-        e.target.parentElement.parentElement.style.left = `${props.xOffset}px`;
+        e.target.parentElement.parentElement.style.left = `${props.xOffset}%`;
     };
     const left = (e) => {
         props.left(props.position);
-        e.target.parentElement.parentElement.style.left = `${props.xOffset}px`;
+        e.target.parentElement.parentElement.style.left = `${props.xOffset}%`;
     };
     return (
         <div className='relative' style={{top: props.position === 'top' ? '220px' : '525px', width: '180px'}}>
