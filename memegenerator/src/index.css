@@ -88,11 +88,16 @@ p {
   transform: translate(-50%, -50%);
   z-index: 1;
   font-family: 'Anton';
-  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-width: 2.5px;
   -webkit-text-stroke-color: black;
-  font-size: 30px;
+  font-size: 40px;
   width: 500px;
   text-align: center;
+  line-height: 45px;
+}
+
+.relative {
+  position: relative;
 }
 
 #p1 {
@@ -100,5 +105,5 @@ p {
 }
 
 #p2 {
-  top: 610px;
+  top: 595px;
 }
