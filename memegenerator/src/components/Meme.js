@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import Text from './Text';
 
 export default function Meme() {
     const [meme, setMeme] = useState({
@@ -7,6 +8,10 @@ export default function Meme() {
         randomImage: 'https://i.imgflip.com/1bij.jpg'
     });
     const [allMemes, setAllMemes] = useState([]);
+    const [topY, setTopY] = useState(220);
+    const [topX, setTopX] = useState(360);
+    const [bottomY, setBottomY] = useState(525);
+    const [bottomX, setBottomX] = useState(360);
     useEffect(() => {
         const getMemes = async() => {
             const res = await fetch('https://api.imgflip.com/get_memes');
@@ -25,6 +30,34 @@ export default function Meme() {
         ...prev,
         [target.name]: target.value.toUpperCase()
     }));
+    const handleDown = position => {
+        if (position === 'top') {
+            setTopY(prev => prev+5);
+        } else {
+            setBottomY(prev => prev+5);
+        }
+    };
+    const handleUp = position => {
+        if (position === 'top') {
+            setTopY(prev => prev-5);
+        } else {
+            setBottomY(prev => prev-5);
+        }
+    };
+    const handleRight = position => {
+        if (position === 'top') {
+            setTopX(prev => prev+5);
+        } else {
+            setBottomX(prev => prev+5);
+        }
+    };
+    const handleLeft = position => {
+        if (position === 'top') {
+            setTopX(prev => prev-5);
+        } else {
+            setBottomX(prev => prev-5);
+        }
+    };
     return (
         <div>
             <div id="inputs">
@@ -32,11 +65,9 @@ export default function Meme() {
                 <input type="text" name='bottomText' placeholder="Bottom Text" onChange={handleChange} value={meme.bottomText}/>
             </div>
             <button id="submit" onClick={handleClick}>Get a new meme image  🖼</button>
-            <div id='relative'>
-                <img src={meme.randomImage} alt="failed to load :(" id="meme"/>
-                <p id='p1'>{meme.topText}</p>
-                <p id='p2'>{meme.bottomText}</p>
-            </div>
+            <img src={meme.randomImage} alt="failed to load :(" id="meme"/>
+            <Text text={meme.topText} yOffset={topY} xOffset={topX} position='top' down={handleDown} up={handleUp} right={handleRight} left={handleLeft}/>
+            <Text text={meme.bottomText} yOffset={bottomY} xOffset={bottomX} position='bottom' down={handleDown} up={handleUp} right={handleRight} left={handleLeft}/>
         </div>
     );
 }
