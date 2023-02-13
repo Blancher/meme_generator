@@ -53,9 +53,9 @@ export default function Meme() {
     };
     const handleLeft = position => {
         if (position === 'top') {
-            setTopX(prev => prev-.5);
+            setTopX(prev => prev-1);
         } else {
-            setBottomX(prev => prev-.5);
+            setBottomX(prev => prev-1);
         }
     };
     return (
