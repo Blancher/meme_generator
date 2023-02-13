@@ -33,30 +33,30 @@ export default function Meme() {
     }));
     const handleDown = position => {
         if (position === 'top') {
-            setTopY(prev => prev+1);
+            setTopY(prev => prev+5);
         } else {
-            setBottomY(prev => prev+1);
+            setBottomY(prev => prev+5);
         }
     };
     const handleUp = position => {
         if (position === 'top') {
-            setTopY(prev => prev-1);
+            setTopY(prev => prev-5);
         } else {
-            setBottomY(prev => prev-1);
+            setBottomY(prev => prev-5);
         }
     };
     const handleRight = position => {
         if (position === 'top') {
-            setTopX(prev => prev+1);
+            setTopX(prev => prev+5);
         } else {
-            setBottomX(prev => prev+1);
+            setBottomX(prev => prev+5);
         }
     };
     const handleLeft = position => {
         if (position === 'top') {
-            setTopX(prev => prev-1);
+            setTopX(prev => prev-5);
         } else {
-            setBottomX(prev => prev-1);
+            setBottomX(prev => prev-5);
         }
     };
     return (
