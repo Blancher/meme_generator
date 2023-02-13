@@ -86,7 +86,6 @@ p {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
   font-family: 'Anton';
   -webkit-text-stroke-width: 2.5px;
   -webkit-text-stroke-color: black;
@@ -97,13 +96,25 @@ p {
 }
 
 .relative {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.relative {
   position: relative;
 }
 
-#p1 {
-  top: 290px;
+.direction {
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
+  color: black;
 }
 
-#p2 {
-  top: 595px;
+.flex {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
