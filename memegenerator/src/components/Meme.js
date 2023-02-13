@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react';
 import Text from './Text';
 
 export default function Meme() {
-    const width = window.innerWidth/2;
     const [meme, setMeme] = useState({
         topText: '',
         bottomText: '',
@@ -10,9 +9,9 @@ export default function Meme() {
     });
     const [allMemes, setAllMemes] = useState([]);
     const [topY, setTopY] = useState(220);
-    const [topX, setTopX] = useState(width);
+    const [topX, setTopX] = useState(50);
     const [bottomY, setBottomY] = useState(525);
-    const [bottomX, setBottomX] = useState(width);
+    const [bottomX, setBottomX] = useState(50);
     useEffect(() => {
         const getMemes = async() => {
             const res = await fetch('https://api.imgflip.com/get_memes');
@@ -47,16 +46,16 @@ export default function Meme() {
     };
     const handleRight = position => {
         if (position === 'top') {
-            setTopX(prev => prev+5);
+            setTopX(prev => prev+1);
         } else {
-            setBottomX(prev => prev+5);
+            setBottomX(prev => prev+1);
         }
     };
     const handleLeft = position => {
         if (position === 'top') {
-            setTopX(prev => prev-5);
+            setTopX(prev => prev-.5);
         } else {
-            setBottomX(prev => prev-5);
+            setBottomX(prev => prev-.5);
         }
     };
     return (
