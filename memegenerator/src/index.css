@@ -90,7 +90,8 @@ p {
   -webkit-text-stroke-width: 2.5px;
   -webkit-text-stroke-color: black;
   font-size: 40px;
-  width: 500px;
+  width: 400px;
+  word-wrap: break-word;
   text-align: center;
   line-height: 45px;
 }
