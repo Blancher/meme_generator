@@ -111,6 +111,7 @@ p {
   width: 30px;
   height: 30px;
   color: black;
+  cursor: pointer;
 }
 
 .flex {
